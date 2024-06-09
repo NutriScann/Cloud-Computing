@@ -13,15 +13,21 @@ model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'mode
 
 # Labels and descriptions
 foods = [
-    {"name": "bakso", "desc": "Deskripsi Bakso", "carbo": "30g", "protein": "10g", "calory": "250 kkal", "lemak": "15g", "bahan": ["daging sapi", "tepung", "bawang putih"]},
-    {"name": "bebek_betutu", "desc": "Deskripsi Bebek Betutu", "carbo": "20g", "protein": "30g", "calory": "400 kkal", "lemak": "25g", "bahan": ["bebek", "bumbu kuning", "daun pisang"]},
-    {"name": "gado_gado", "desc": "Deskripsi Gado-Gado", "carbo": "35g", "protein": "15g", "calory": "300 kkal", "lemak": "10g", "bahan": ["sayur-sayuran", "tahu", "tempe", "saus kacang"]},
-    {"name": "nasi_goreng", "desc": "Deskripsi Nasi Goreng", "carbo": "50g", "protein": "20g", "calory": "500 kkal", "lemak": "20g", "bahan": ["nasi", "kecap", "telur", "ayam"]},
-    {"name": "pempek", "desc": "Deskripsi Pempek", "carbo": "40g", "protein": "15g", "calory": "350 kkal", "lemak": "15g", "bahan": ["ikan", "tepung", "cuka"]},
-    {"name": "rawon", "desc": "Deskripsi Rawon", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["daging sapi", "kluwek", "bawang merah"]},
-    {"name": "rendang", "desc": "Deskripsi Rendang", "carbo": "15g", "protein": "25g", "calory": "400 kkal", "lemak": "30g", "bahan": ["daging sapi", "santan", "rempah-rempah"]},
-    {"name": "sate", "desc": "Deskripsi Sate", "carbo": "20g", "protein": "25g", "calory": "350 kkal", "lemak": "20g", "bahan": ["daging ayam", "bumbu kacang"]},
-    {"name": "soto", "desc": "Deskripsi Soto", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["ayam", "sayuran", "bumbu kuning"]}
+    {"name": "bakso", "desc": "Bola daging yang berasal dari Indonesia, biasanya terbuat dari campuran daging sapi atau ayam dan tepung tapioka.", "carbo": "30g", "protein": "10g", "calory": "250 kkal", "lemak": "15g", "bahan": ["daging sapi", "tepung", "bawang putih"]},
+    {"name": "bibimbap", "desc": "Hidangan khas Korea yang terdiri dari nasi dengan berbagai macam sayuran, daging, telur, dan saus gochujang.", "carbo": "85g", "protein": "14g", "calory": "500 kkal", "lemak": "12g", "bahan": ["nasi", "sayuran", "gochujang","daging sapi","telur"]},
+    {"name": "burger", "desc": "Makanan cepat saji yang berasal dari Amerika Serikat, terdiri dari daging patty yang disajikan di dalam roti bulat dengan tambahan sayuran dan saus.", "carbo": "40g", "protein": "25g", "calory": "500 kkal", "lemak": "25g", "bahan": ["daging sapi (pastty)", "roti", "keju", "selada", "tomat", "acar", "saus"]},
+    {"name": "donat", "desc": "Kue goreng berbentuk cincin atau bola yang berasal dari Amerika Serikat, biasanya ditaburi gula atau dilapisi glasir.", "carbo": "40g", "protein": "5g", "calory": "300 kkal", "lemak": "15g", "bahan": ["tepung", "ragi", "gula", "susu", "telur", "mentega", "topping"]},
+    {"name": "eskrim", "desc": "Hidangan penutup beku yang terbuat dari susu, krim, dan gula, berasal dari Persia kuno namun populer di seluruh dunia.", "carbo": "30g", "protein": "4g", "calory": "250 kkal", "lemak": "15g", "bahan": ["susu", "krim", "gula","perisa (vanilla, coklat, stroberi, dll)"]},
+    {"name": "gado", "desc": "Salad sayuran rebus khas Indonesia yang disajikan dengan bumbu kacang.", "carbo": "35g", "protein": "15g", "calory": "300 kkal", "lemak": "10g", "bahan": ["sayur-sayuran", "tahu", "tempe", "saus kacang"]},
+    {"name": "kentang goreng", "desc": "Irisan kentang yang digoreng hingga renyah, berasal dari Belgia.", "carbo": "45g", "protein": "4g", "calory": "350 kkal", "lemak": "20g", "bahan": ["kentang", "garam"]},
+    {"name": "nasi_goreng", "desc": "Hidangan nasi yang digoreng dengan bumbu dan tambahan seperti telur, daging, dan sayuran, berasal dari Indonesia.", "carbo": "50g", "protein": "20g", "calory": "500 kkal", "lemak": "20g", "bahan": ["nasi", "kecap", "telur", "ayam"]},
+    {"name": "pangsit", "desc": "Kulit adonan tipis yang diisi dengan daging atau sayuran, lalu direbus atau digoreng, berasal dari Tiongkok.", "carbo": "6g", "protein": "3g", "calory": "60 kkal", "lemak": "3g", "bahan": ["kulit pangsit", "daging cincang", "bawang putih", "garam", "daun bawang"]},
+    {"name": "pizza", "desc": "Hidangan Italia yang terdiri dari roti pipih yang dipanggang dan diberi topping seperti saus tomat, keju, dan daging.", "carbo": "35g", "protein": "12g", "calory": "300 kkal", "lemak": "15g", "bahan": ["adonan pizza", "saus tomat", "keju", "topping"]},
+    {"name": "ramen", "desc": "Mie kuah Jepang yang disajikan dengan berbagai tambahan seperti daging, telur, dan sayuran.", "carbo": "70g", "protein": "15g", "calory": "500 kkal", "lemak": "20g", "bahan": ["mie ramen", "kaldu", "daging", "telur rebus", "sayuran (daun bawnag, nori, tauge)", "bumbu"]},
+    {"name": "rawon", "desc": "Sup daging sapi khas Indonesia yang berwarna hitam karena menggunakan kluwek sebagai bumbu utama.", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["daging sapi", "kluwek", "bawang merah"]},
+    {"name": "rendang", "desc": "Hidangan daging sapi yang dimasak dengan santan dan rempah-rempah hingga kering, berasal dari Minangkabau, Indonesia.", "carbo": "15g", "protein": "25g", "calory": "400 kkal", "lemak": "30g", "bahan": ["daging sapi", "santan", "rempah-rempah"]},
+    {"name": "sate", "desc": "Potongan daging yang ditusuk dan dipanggang, biasanya disajikan dengan saus kacang, berasal dari Indonesia.", "carbo": "20g", "protein": "25g", "calory": "350 kkal", "lemak": "20g", "bahan": ["daging ayam", "bumbu kacang"]},
+    {"name": "soto", "desc": "Sup tradisional Indonesia yang biasanya terbuat dari kaldu daging dengan tambahan sayuran dan bihun atau lontong.", "carbo": "25g", "protein": "20g", "calory": "300 kkal", "lemak": "15g", "bahan": ["ayam", "sayuran", "bumbu kuning"]}
 ]
 
 labels = [food['name'] for food in foods]
