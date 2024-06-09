@@ -22,17 +22,17 @@ Ikuti langkah-langkah di bawah ini untuk menginstal aplikasi:
 
 1. **Clone repositori ini:**
     ```bash
-    git clone https://github.com/username/repo-name.git
+    git clone https://github.com/NutriScann/cloud-computing.git
     cd repo-name
     ```
 
 2. **Buat virtual environment (opsional tetapi disarankan):**
     ```bash
     python -m venv venv
-    source venv/bin/activate # untuk pengguna Unix atau MacOS
+    source venv/bin/activate # untuk pengguna Linux atau MacOS
     .\venv\Scripts\activate # untuk pengguna Windows
     ```
-
+ 
 3. **Instal dependensi:**
     ```bash
     pip install -r requirements.txt
@@ -50,6 +50,9 @@ Ikuti langkah-langkah di bawah ini untuk menginstal aplikasi:
 1. **Jalankan aplikasi Flask:**
     ```bash
     python run.py
+    ```
+    ```bash
+    flask run
     ```
 
 2. **Akses aplikasi melalui `http://localhost:5000`.**
@@ -103,15 +106,14 @@ Ikuti langkah-langkah di bawah ini untuk menginstal aplikasi:
                 "bahan": ["daging sapi", "tepung", "bawang putih"]
             },
             {
-                "name": "bebek_betutu",
-                "desc": "Deskripsi Bebek Betutu",
+                "name": "rawon",
+                "desc": "Deskripsi Rawon",
                 "carbo": "20g",
                 "protein": "30g",
                 "calory": "400 kkal",
                 "lemak": "25g",
                 "bahan": ["bebek", "bumbu kuning", "daun pisang"]
             },
-            // data makanan lainnya...
         ]
     }
     ```
