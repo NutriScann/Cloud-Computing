@@ -1,5 +1,6 @@
 from flask import Blueprint, request, jsonify
 import tensorflow as tf
+import tensorflow_hub as hub
 from PIL import Image
 import numpy as np
 import base64
@@ -9,7 +10,9 @@ import os
 main = Blueprint('main', __name__)
 
 # Load the .h5 model
-model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'model.h5'))
+# Daftarkan KerasLayer sebagai objek khusus
+with tf.keras.utils.custom_object_scope({'KerasLayer': hub.KerasLayer}):
+    model = tf.keras.models.load_model(os.path.join(os.path.dirname(__file__), 'model.h5'))
 
 # Labels and descriptions
 foods = [
