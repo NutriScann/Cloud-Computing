@@ -1,0 +1,8 @@
+.venv/
+/app/__pycache__/
+label.txt
+sample_images/
+README.MD
+.gitignore
+.vscode
+*.log
